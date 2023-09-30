@@ -2,6 +2,6 @@
 {
     public class Produto
     {
-        public string Id;
+        public int Id { get; set; }
     }
 }
