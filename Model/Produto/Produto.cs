@@ -2,5 +2,6 @@
 {
     public class Produto
     {
+        public string Id;
     }
 }
