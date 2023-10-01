@@ -3,5 +3,7 @@
     public class Produto
     {
         public int Id { get; set; }
+        private String leopoldo;
+        private String fez;
     }
 }
