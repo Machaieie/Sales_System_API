@@ -24,6 +24,6 @@ namespace Sales_System_API.Model
         public DateTime Data { get; set; }
 
         [ForeignKey("StockId")]
-        public virtual StockModel StockModel { get; set; }
+        public virtual required StockModel StockModel { get; set; }
     }
 }

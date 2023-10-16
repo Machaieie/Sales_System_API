@@ -25,9 +25,9 @@ namespace Sales_System_API.Model
         public double Preco { get; set; }
 
         [ForeignKey("VendaId")]
-        public virtual VendaModel VendaModel { get; set; }
+        public virtual required VendaModel VendaModel { get; set; }
 
         [ForeignKey("ProdutoId")]
-        public virtual ProdutoModel ProdutoModel { get; set; }
+        public virtual required ProdutoModel ProdutoModel { get; set; }
     }
 }

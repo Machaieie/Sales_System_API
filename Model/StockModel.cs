@@ -25,6 +25,6 @@ namespace Sales_System_API.Model
         public double PrecoUnitario { get; set; }
 
         [ForeignKey("ProdutoId")]
-        public virtual ProdutoModel ProdutoModel { get; set; }
+        public virtual required ProdutoModel ProdutoModel { get; set; }
     }
 }
