@@ -5,15 +5,17 @@ namespace API_Gestao_Sock.Repositorys.Interfaces
     public interface IProductRepository
     {
         Task<List<ProdutoModel>> GetAllProducts();
-        Task<ProdutoModel> GetProdutoByCode(int id);
+        Task<ProdutoModel> GetProdutoByCode(string code);
+
+        Task<ProdutoModel> AddProduct(ProdutoModel product);
 
         Task<ProdutoModel> GetProductByName(string name);
 
-        Task<ProdutoModel> DeleteproductByName(string id);
+        Task<bool> DeleteproductByName(string name);
 
-        Task DeleteprodutoByCode(int id); 
+        Task<bool> DeleteprodutoByCode(string code); 
 
        
-        Task updateProductByCode(ProdutoModel model, int id);
+        Task<ProdutoModel> updateProductByCode(ProdutoModel model, string code);
     }
 }

@@ -10,7 +10,8 @@ namespace Sales_System_API.Model
    [Table("Produto")]
     public class ProdutoModel
     {
-        public int Id { get; set; }
+        [Key]
+        public string Codigo { get; set; }
 
         [Required(ErrorMessage = "O campo Nome é obrigatório.")]
         [StringLength(100, ErrorMessage = "O campo Nome deve ter no máximo 100 caracteres.")]
@@ -21,5 +22,10 @@ namespace Sales_System_API.Model
 
         [Required(ErrorMessage = "O campo Categoria é obrigatório.")]
         public int Categoria { get; set; }
+
+        [Required(ErrorMessage = "Product price is required.")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Product price must be greater than zero.")]
+        [RegularExpression(@"^\d+(\.\d{1,2})?$", ErrorMessage = "Product price must have up to two decimal places.")]
+        public decimal ProductPrice { get; set; }
     }
 }
