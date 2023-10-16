@@ -1,25 +1,33 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sales_System_API.Model
 {
-    public class CarinhoModel
+    [Table("Carrinho")]
+    public class CarrinhoModel
     {
-        public int Id {get; set;}
-        public int VendaId {get; set;}
-        public int ProdutoId {get;set;}
-        public int quantidade {get; set;}
-        public double Preco {get; set;}
+        [Key] 
+        public int Id { get; set; }
+
+        [Required(ErrorMessage = "O campo VendaId é obrigatório.")]
+        public int VendaId { get; set; }
+
+        [Required(ErrorMessage = "O campo ProdutoId é obrigatório.")]
+        public int ProdutoId { get; set; }
+
+        [Required(ErrorMessage = "O campo Quantidade é obrigatório.")]
+        [Range(1, int.MaxValue, ErrorMessage = "A quantidade deve ser um número positivo.")]
+        public int Quantidade { get; set; }
+
+        [Required(ErrorMessage = "O campo Preço é obrigatório.")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "O preço deve ser maior que zero.")]
+        public double Preco { get; set; }
 
         [ForeignKey("VendaId")]
-        public virtual VendaModel VendaModel{get; set;}
+        public virtual VendaModel VendaModel { get; set; }
 
         [ForeignKey("ProdutoId")]
-        public virtual ProdutoModel ProdutoModel {get; set;}
-
-
+        public virtual ProdutoModel ProdutoModel { get; set; }
     }
 }
