@@ -27,7 +27,8 @@ namespace Sales_System_API.Model
         [ForeignKey("VendaId")]
         public virtual required VendaModel VendaModel { get; set; }
 
-        [ForeignKey("Codigo")] // Chave estrangeira para o CodigoProduto
-        public virtual required ProdutoModel ProdutoModel { get; set; }
+        [ForeignKey("CodigoProduto")] 
+        public virtual ProdutoModel ProdutoModel { get; set; }
+
     }
 }
