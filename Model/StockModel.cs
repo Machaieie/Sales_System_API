@@ -24,7 +24,7 @@ namespace Sales_System_API.Model
         [Range(0.01, double.MaxValue, ErrorMessage = "O preço unitário deve ser maior que zero.")]
         public double PrecoUnitario { get; set; }
 
-        [ForeignKey("Codigo")]
+        [ForeignKey("CodigoProduto")]
         public virtual required ProdutoModel ProdutoModel { get; set; }
     }
 }
