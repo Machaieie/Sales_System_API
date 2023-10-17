@@ -27,6 +27,7 @@ namespace API_Gestao_Sock.Controllers
         public async Task<ActionResult<ProdutoModel>> getProductById(String codigo)
         {
             ProdutoModel produtoModel = await _productRepository.GetProdutoByCode(codigo);
+            int i = 0;
             return Ok(produtoModel);
         }
 
