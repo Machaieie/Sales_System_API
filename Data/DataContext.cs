@@ -12,7 +12,7 @@ namespace API_Gestao_Sock.Data
 
         }
 
-        public DbSet<CarrinhoModel> Carinho { get; set; }
+        public DbSet<CarinhoModel> Carinho { get; set; }
         public DbSet<StockModel> Estoques { get; set; }
         public DbSet<MovimentosStockModel> Movimentos { get; set; }
         public DbSet<ProdutoModel> Productos { get; set; }

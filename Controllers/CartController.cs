@@ -24,9 +24,12 @@ namespace Sales_System_API.Controllers
        }
 
        [HttpGet("{/id}")]
-       public async Task<ActionResult<CarinhoModel>> getOn(string id){
+       public async Task<ActionResult<CarinhoModel>> getOn(int id){
         CarinhoModel carinho = await cartRepository.GetCartById(id);
-        
+       if(carinho == null){
+        return NotFound();
+       }
+       return Ok(carinho);
        }
 
 

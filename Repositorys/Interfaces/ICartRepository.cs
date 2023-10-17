@@ -4,11 +4,11 @@ namespace API_Gestao_Sock.Repositorys.Interfaces
 {
     public interface ICartRepository
     {
-        Task<List<CarrinhoModel>> GetAllCarts();
-        Task<CarrinhoModel> GetCartById(int id);
-        Task<CarrinhoModel> AddCart(CarrinhoModel cart);
+        Task<List<CarinhoModel>> GetAllCarts();
+        Task<CarinhoModel> GetCartById(int id);
+        Task<CarinhoModel> AddCart(CarinhoModel cart);
 
-        Task<CarrinhoModel> UpdateCartById(CarrinhoModel cart, int id);
+        Task<CarinhoModel> UpdateCartById(CarinhoModel cart, int id);
 
         Task<bool> DeleteCartById(int id);
     }
