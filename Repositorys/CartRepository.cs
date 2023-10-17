@@ -12,7 +12,7 @@ namespace API_Gestao_Sock.Repositorys
 
         public  CartRepository(DataContext dataContext)
         {
-
+            _dataContext = dataContext;
         }
         public async Task<CarrinhoModel> AddCart(CarrinhoModel cartModel)
         {
