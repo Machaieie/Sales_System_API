@@ -15,12 +15,24 @@ namespace API_Gestao_Sock.Repositorys
         {
             _dataContext = dataContext;
         }
-       public  async Task<ProdutoModel> AddProduct(ProdutoModel product)
+        public async Task<ProdutoModel> AddProduct(ProdutoModel product)
         {
+            // Gere um código de produto único
+            string productCode;
+            do
+            {
+                productCode = GenerateProductCode();
+            }
+            while (await GetProdutoByCode(productCode) != null);
+
+            product.Codigo = productCode;
+
             await _dataContext.Productos.AddAsync(product);
             await _dataContext.SaveChangesAsync();
+
             return product;
         }
+
 
         public async Task<List<ProdutoModel>> GetAllProducts()
         {
@@ -36,17 +48,7 @@ namespace API_Gestao_Sock.Repositorys
         {
             return await _dataContext.Productos.FirstOrDefaultAsync(x => x.Codigo == code);
         }
-        public async Task<bool> DeleteproductByName(string name)
-        {
-            ProdutoModel produto = await GetProductByName(name);
-            if (produto == null)
-            {
-                throw new Exception($"O Producto com o nome: {name} não foi encontrado");
-            }
-            _dataContext.Productos.Remove(produto);
-            await _dataContext.SaveChangesAsync();
-            return true;
-        }
+        
 
        public async Task<bool> DeleteprodutoByCode(string code)
         {
@@ -79,6 +81,17 @@ namespace API_Gestao_Sock.Repositorys
             return produto;
         }
 
-       
+
+        // metodo para gerar o codigo do produto
+        public string GenerateProductCode()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            var code = new string(Enumerable.Repeat(chars, 6)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+
+            return code;
+        }
+
     }
 }

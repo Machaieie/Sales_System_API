@@ -51,7 +51,7 @@ namespace API_Gestao_Sock.Repositorys
                 throw new Exception($"Estoque com o id: {id} não encontrado");
             }
 
-            stockModel.ProdutoId = stock.ProdutoId;
+            stockModel.CodigoProduto = stock.CodigoProduto;
             stockModel.Quantidade = stock.Quantidade;
             stockModel.PrecoUnitario = stock.PrecoUnitario;
 

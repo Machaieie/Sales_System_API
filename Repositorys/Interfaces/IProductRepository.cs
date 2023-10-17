@@ -11,7 +11,7 @@ namespace API_Gestao_Sock.Repositorys.Interfaces
 
         Task<ProdutoModel> GetProductByName(string name);
 
-        Task<bool> DeleteproductByName(string name);
+        
 
         Task<bool> DeleteprodutoByCode(string code); 
 
