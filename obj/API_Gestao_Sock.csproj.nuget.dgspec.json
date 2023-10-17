@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\EDWIN-OLOGA\\source\\repos\\API_Gestao_Sock\\API_Gestao_Sock.csproj": {}
+    "D:\\Edwin-OLOGA\\source\\repos\\TrabalhoMadalena\\Sales_System_API\\API_Gestao_Sock.csproj": {}
   },
   "projects": {
-    "c:\\Users\\EDWIN-OLOGA\\source\\repos\\API_Gestao_Sock\\API_Gestao_Sock.csproj": {
+    "D:\\Edwin-OLOGA\\source\\repos\\TrabalhoMadalena\\Sales_System_API\\API_Gestao_Sock.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\EDWIN-OLOGA\\source\\repos\\API_Gestao_Sock\\API_Gestao_Sock.csproj",
+        "projectUniqueName": "D:\\Edwin-OLOGA\\source\\repos\\TrabalhoMadalena\\Sales_System_API\\API_Gestao_Sock.csproj",
         "projectName": "API_Gestao_Sock",
-        "projectPath": "c:\\Users\\EDWIN-OLOGA\\source\\repos\\API_Gestao_Sock\\API_Gestao_Sock.csproj",
+        "projectPath": "D:\\Edwin-OLOGA\\source\\repos\\TrabalhoMadalena\\Sales_System_API\\API_Gestao_Sock.csproj",
         "packagesPath": "C:\\Users\\EDWIN-OLOGA\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\EDWIN-OLOGA\\source\\repos\\API_Gestao_Sock\\obj\\",
+        "outputPath": "D:\\Edwin-OLOGA\\source\\repos\\TrabalhoMadalena\\Sales_System_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\EDWIN-OLOGA\\AppData\\Roaming\\NuGet\\NuGet.Config",

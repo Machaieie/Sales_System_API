@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6g3qBBU5t2P/w7UneoKnUh6kSryyxB6224tWyFfQCHanH8zhV7LFd096bk6XAjSHfX+ue67wxbCMJHY680H5Bw==",
+  "dgSpecHash": "V1vozA7WwfUq5H/UNYQ7mIuwaW1j7z+lsmsufb8Zpq7VcVnLqNLWNWIYXKLBE66M9Gngj9qjMSVf92a7FESkfA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\EDWIN-OLOGA\\source\\repos\\API_Gestao_Sock\\API_Gestao_Sock.csproj",
+  "projectFilePath": "D:\\Edwin-OLOGA\\source\\repos\\TrabalhoMadalena\\Sales_System_API\\API_Gestao_Sock.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EDWIN-OLOGA\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\EDWIN-OLOGA\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
