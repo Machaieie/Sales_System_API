@@ -5,8 +5,7 @@
         public int Id { get; set; }
         private String leopoldo;
         private String fez;
-           private String leopoldo;
-        private String fez;
+          
 
     }
 }
