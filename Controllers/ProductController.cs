@@ -9,9 +9,9 @@ namespace API_Gestao_Sock.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IProductRepository _productRepository;
+        private readonly ProductRepository _productRepository;
 
-        public  ProductController(IProductRepository productRepository)
+        public  ProductController(ProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
@@ -24,10 +24,12 @@ namespace API_Gestao_Sock.Controllers
         }
 
         [HttpGet("/{id}")]
-        public async Task<ActionResult<ProdutoModel>> getProductById(String codigo)
+        public async Task<ActionResult<ProdutoModel>> getProductById(String id)
         {
-            ProdutoModel produtoModel = await _productRepository.GetProdutoByCode(codigo);
-            int i = 0;
+            ProdutoModel produtoModel = await _productRepository.GetProdutoByCode(id);
+            if(produtoModel == null){
+                return NotFound();
+            }
             return Ok(produtoModel);
         }
 

@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sales_System_API.Model
 {
-    [Table("Carrinho")]
-    public class CarrinhoModel
+    [Table("Carinho")]
+    public class CarinhoModel
     {
         [Key]
         public int Id { get; set; }

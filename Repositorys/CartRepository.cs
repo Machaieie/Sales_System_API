@@ -14,7 +14,7 @@ namespace API_Gestao_Sock.Repositorys
         {
             _dataContext = dataContext;
         }
-        public async Task<CarrinhoModel> AddCart(CarrinhoModel cartModel)
+        public async Task<CarinhoModel> AddCart(CarinhoModel cartModel)
         {
             await _dataContext.Carinho.AddAsync(cartModel);
             await _dataContext.SaveChangesAsync();
@@ -23,7 +23,7 @@ namespace API_Gestao_Sock.Repositorys
 
         public async Task<bool> DeleteCartById(int id)
         {
-            CarrinhoModel cartModel = await GetCartById(id);
+            CarinhoModel cartModel = await GetCartById(id);
             if (cartModel == null)
             {
                 throw new Exception($"Carrinho com o id: {id} não encontrado");
@@ -33,19 +33,19 @@ namespace API_Gestao_Sock.Repositorys
             return true;
         }
 
-        public async Task<List<CarrinhoModel>> GetAllCarts()
+        public async Task<List<CarinhoModel>> GetAllCarts()
         {
             return await _dataContext.Carinho.ToListAsync();
         }
 
-        public async Task<CarrinhoModel> GetCartById(int id)
+        public async Task<CarinhoModel> GetCartById(int id)
         {
             return await _dataContext.Carinho.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<CarrinhoModel> UpdateCartById(CarrinhoModel cart, int id)
+        public async Task<CarinhoModel> UpdateCartById(CarinhoModel cart, int id)
         {
-            CarrinhoModel cartModel = await GetCartById(id);
+            CarinhoModel cartModel = await GetCartById(id);
             if (cartModel == null)
             {
                 throw new Exception($"Carrinho com o id: {id} não encontrado");
