@@ -52,7 +52,7 @@ namespace API_Gestao_Sock.Repositorys
             }
 
             cartModel.VendaId = cart.VendaId;
-            cartModel.ProdutoId = cart.ProdutoId;
+            cartModel.CodigoProduto = cart.CodigoProduto;
             cartModel.Quantidade = cart.Quantidade;
             cartModel.Preco = cart.Preco;
             _dataContext.Carinho.Update(cartModel);

@@ -7,14 +7,14 @@ namespace Sales_System_API.Model
     [Table("Carrinho")]
     public class CarrinhoModel
     {
-        [Key] 
+        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo VendaId é obrigatório.")]
         public int VendaId { get; set; }
 
-        [Required(ErrorMessage = "O campo ProdutoId é obrigatório.")]
-        public int ProdutoId { get; set; }
+        [Required(ErrorMessage = "O campo {0} é obrigatório.")]
+        public string? CodigoProduto { get; set; }
 
         [Required(ErrorMessage = "O campo Quantidade é obrigatório.")]
         [Range(1, int.MaxValue, ErrorMessage = "A quantidade deve ser um número positivo.")]
@@ -27,7 +27,7 @@ namespace Sales_System_API.Model
         [ForeignKey("VendaId")]
         public virtual required VendaModel VendaModel { get; set; }
 
-        [ForeignKey("ProdutoId")]
+        [ForeignKey("Codigo")] // Chave estrangeira para o CodigoProduto
         public virtual required ProdutoModel ProdutoModel { get; set; }
     }
 }

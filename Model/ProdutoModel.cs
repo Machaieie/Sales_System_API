@@ -11,7 +11,7 @@ namespace Sales_System_API.Model
     public class ProdutoModel
     {
         [Key]
-        public string Codigo { get; set; }
+        public string? Codigo { get; set; }
 
         [Required(ErrorMessage = "O campo Nome é obrigatório.")]
         [StringLength(100, ErrorMessage = "O campo Nome deve ter no máximo 100 caracteres.")]

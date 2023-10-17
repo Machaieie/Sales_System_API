@@ -14,7 +14,7 @@ namespace Sales_System_API.Model
         public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo ProdutoId é obrigatório.")]
-        public int CodigoProduto { get; set; }
+        public string? CodigoProduto { get; set; }
 
         [Required(ErrorMessage = "O campo Quantidade é obrigatório.")]
         [Range(1, int.MaxValue, ErrorMessage = "A quantidade deve ser um número positivo.")]
