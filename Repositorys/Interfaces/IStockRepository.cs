@@ -8,7 +8,7 @@ namespace API_Gestao_Sock.Repositorys.Interfaces
         Task<List<StockModel>> GetAllStock();
         Task<StockModel> GetStockById(int id);
 
-        Task<StockModel> AddSale(StockModel stock);
+        Task<StockModel> AddStock(StockModel stock);
 
         Task<bool> DeleteStockById(int id);
 
