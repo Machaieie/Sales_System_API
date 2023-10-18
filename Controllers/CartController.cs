@@ -23,7 +23,7 @@ namespace Sales_System_API.Controllers
          return Ok(await cartRepository.GetAllCarts());
        }
 
-       [HttpGet("{/id}")]
+       [HttpGet("{id}")]
        public async Task<ActionResult<CarinhoModel>> getOn(int id){
         CarinhoModel carinho = await cartRepository.GetCartById(id);
        if(carinho == null){
@@ -32,6 +32,30 @@ namespace Sales_System_API.Controllers
        return Ok(carinho);
        }
 
+       [HttpPost]
+       public async Task<ActionResult<CarinhoModel>> salvarCarinho([FromBody] CarinhoModel carinho){
+        if(carinho == null){
+            return BadRequest();
+        }
+        CarinhoModel model = await cartRepository.AddCart(carinho);
+        return Ok(model);
+       }
+
+
+       [HttpDelete("{id}")]
+       public async Task<ActionResult> delete(int id){
+            bool apagou = await cartRepository.DeleteCartById(id);
+            if(!apagou){
+                return BadRequest();
+            }
+                return Ok();
+       }
+
+       [HttpPut("{id}")]
+       public async Task<ActionResult<CarinhoModel>> updateCarinho([FromBody] CarinhoModel carinho, int id){
+            CarinhoModel carinhoModel = await cartRepository.UpdateCartById(carinho, id);
+            return carinhoModel;
+       }
 
     }
 }
