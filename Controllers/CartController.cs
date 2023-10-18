@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API_Gestao_Sock.Repositorys;
+using API_Gestao_Sock.Repositorys.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Sales_System_API.Model;
 
@@ -12,9 +13,9 @@ namespace Sales_System_API.Controllers
     [ApiController]
     public class CartController : ControllerBase
     {
-        private readonly CartRepository cartRepository;
+        private readonly ICartRepository cartRepository;
 
-        public CartController(CartRepository cartRepository){
+        public CartController(ICartRepository cartRepository){
             this.cartRepository = cartRepository;
         }
   

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API_Gestao_Sock.Repositorys;
+using API_Gestao_Sock.Repositorys.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Sales_System_API.Model;
 
@@ -12,9 +13,9 @@ namespace Sales_System_API.Controllers
     [Route("api/vi/vendas")]
     public class SaleController : ControllerBase
     {
-        private readonly SaleRepository saleRepository;
+        private readonly ISaleRepository saleRepository;
 
-        public SaleController(SaleRepository saleRepository){
+        public SaleController(ISaleRepository saleRepository){
             this.saleRepository = saleRepository;
         }
 
