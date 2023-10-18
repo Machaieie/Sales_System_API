@@ -53,6 +53,9 @@ namespace Sales_System_API.Controllers
 
         [HttpPut("{id}")]
         public async Task<ActionResult<VendaModel>> updateVenda([FromBody] VendaModel vendaModel, int id){
+           if(saleRepository.GetSaleById(id) == null){
+            return BadRequest();
+           }
             return Ok(await saleRepository.updateSaleById(vendaModel, id));
         }
     }
