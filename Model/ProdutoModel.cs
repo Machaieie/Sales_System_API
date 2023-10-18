@@ -21,6 +21,7 @@ namespace Sales_System_API.Model
         public string? Descricao { get; set; }
 
         [Required(ErrorMessage = "O campo Categoria é obrigatório.")]
+
         public string? Categoria { get; set; }
 
         [Required(ErrorMessage = "Product price is required.")]
