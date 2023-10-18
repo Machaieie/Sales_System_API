@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_Gestao_Sock.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20231017204154_ConfiguracoesDeBanco")]
-    partial class ConfiguracoesDeBanco
+    [Migration("20231018103033_LocalData")]
+    partial class LocalData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,7 +57,7 @@ namespace API_Gestao_Sock.Migrations
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("Sales_System_API.Model.CarrinhoModel", b =>
+            modelBuilder.Entity("Sales_System_API.Model.CarinhoModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,7 +84,7 @@ namespace API_Gestao_Sock.Migrations
 
                     b.HasIndex("VendaId");
 
-                    b.ToTable("Carrinho");
+                    b.ToTable("Carinho");
                 });
 
             modelBuilder.Entity("Sales_System_API.Model.MovimentosStockModel", b =>
@@ -116,8 +116,9 @@ namespace API_Gestao_Sock.Migrations
                     b.Property<string>("Codigo")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Categoria")
-                        .HasColumnType("int");
+                    b.Property<string>("Categoria")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Descricao")
                         .HasMaxLength(255)
@@ -180,7 +181,7 @@ namespace API_Gestao_Sock.Migrations
                     b.ToTable("Venda");
                 });
 
-            modelBuilder.Entity("Sales_System_API.Model.CarrinhoModel", b =>
+            modelBuilder.Entity("Sales_System_API.Model.CarinhoModel", b =>
                 {
                     b.HasOne("Sales_System_API.Model.ProdutoModel", "ProdutoModel")
                         .WithMany()

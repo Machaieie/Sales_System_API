@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace API_Gestao_Sock.Migrations
 {
     /// <inheritdoc />
-    public partial class ConfiguracoesDeBanco : Migration
+    public partial class LocalData : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +18,7 @@ namespace API_Gestao_Sock.Migrations
                     Codigo = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Descricao = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
-                    Categoria = table.Column<int>(type: "int", nullable: false),
+                    Categoria = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProductPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
@@ -77,7 +77,7 @@ namespace API_Gestao_Sock.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Carrinho",
+                name: "Carinho",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -89,15 +89,15 @@ namespace API_Gestao_Sock.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Carrinho", x => x.Id);
+                    table.PrimaryKey("PK_Carinho", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Carrinho_Produto_CodigoProduto",
+                        name: "FK_Carinho_Produto_CodigoProduto",
                         column: x => x.CodigoProduto,
                         principalTable: "Produto",
                         principalColumn: "Codigo",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Carrinho_Venda_VendaId",
+                        name: "FK_Carinho_Venda_VendaId",
                         column: x => x.VendaId,
                         principalTable: "Venda",
                         principalColumn: "Id",
@@ -126,13 +126,13 @@ namespace API_Gestao_Sock.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Carrinho_CodigoProduto",
-                table: "Carrinho",
+                name: "IX_Carinho_CodigoProduto",
+                table: "Carinho",
                 column: "CodigoProduto");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Carrinho_VendaId",
-                table: "Carrinho",
+                name: "IX_Carinho_VendaId",
+                table: "Carinho",
                 column: "VendaId");
 
             migrationBuilder.CreateIndex(
@@ -150,7 +150,7 @@ namespace API_Gestao_Sock.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Carrinho");
+                name: "Carinho");
 
             migrationBuilder.DropTable(
                 name: "MovimentosStock");
