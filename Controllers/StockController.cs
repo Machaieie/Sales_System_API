@@ -14,9 +14,11 @@ namespace Sales_System_API.Controllers
     public class StockController : ControllerBase
     {
         private readonly IStockRepository stockRepository;
+        private readonly IProductRepository _productRepository;
 
-        public StockController(IStockRepository stock){
+        public StockController(IStockRepository stock, IProductRepository productRepository){
             stockRepository = stock;
+            _productRepository = productRepository;
         }
         
         [HttpGet]
