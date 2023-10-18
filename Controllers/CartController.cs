@@ -54,7 +54,7 @@ namespace Sales_System_API.Controllers
        [HttpPut("{id}")]
        public async Task<ActionResult<CarinhoModel>> updateCarinho([FromBody] CarinhoModel carinho, int id){
             CarinhoModel carinhoModel = await cartRepository.UpdateCartById(carinho, id);
-            return carinhoModel;
+            return Ok(carinhoModel);
        }
 
     }
