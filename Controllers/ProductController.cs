@@ -1,5 +1,6 @@
 ﻿using API_Gestao_Sock.Repositorys;
 using API_Gestao_Sock.Repositorys.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sales_System_API.Model;
 
@@ -9,9 +10,9 @@ namespace API_Gestao_Sock.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly ProductRepository _productRepository;
+        private readonly IProductRepository _productRepository;
 
-        public  ProductController(ProductRepository productRepository)
+        public ProductController(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
@@ -23,11 +24,12 @@ namespace API_Gestao_Sock.Controllers
             return Ok(produtoModels);
         }
 
-        [HttpGet("/{id}")]
-        public async Task<ActionResult<ProdutoModel>> getProductById(String id)
+        [HttpGet("{code}")]
+        public async Task<ActionResult<ProdutoModel>> getProductById(String code)
         {
-            ProdutoModel produtoModel = await _productRepository.GetProdutoByCode(id);
-            if(produtoModel == null){
+            ProdutoModel produtoModel = await _productRepository.GetProdutoByCode(code);
+            if (produtoModel == null)
+            {
                 return NotFound();
             }
             return Ok(produtoModel);
@@ -41,7 +43,7 @@ namespace API_Gestao_Sock.Controllers
 
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{code}")]
         public async Task<ActionResult<ProdutoModel>> UpdateProduct([FromBody] ProdutoModel productModel, string codigo)
         {
             productModel.Codigo = codigo;
@@ -50,7 +52,7 @@ namespace API_Gestao_Sock.Controllers
 
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{code}")]
         public async Task<ActionResult<ProdutoModel>> DeleteProduct(ProdutoModel productModel, string codigo)
         {
             productModel.Codigo = codigo;
@@ -61,3 +63,4 @@ namespace API_Gestao_Sock.Controllers
 
     }
 }
+ 
