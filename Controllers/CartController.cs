@@ -34,7 +34,7 @@ namespace Sales_System_API.Controllers
        }
 
        [HttpPost]
-       public async Task<ActionResult<CarinhoModel>> salvarCarinho([FromBody] CarinhoModel carinho){
+       public async Task<ActionResult<CarinhoModel>> salvarCarinho([FromBody] CarinhoDTO carinho){
         if(carinho == null){
             return BadRequest();
         }

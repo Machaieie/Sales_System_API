@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer("Data source=OLOGA_PROGRAMS\\SQLEXPRESS;initial catalog=MeuSistema; integrated security=false; User ID=OLOGA_Programs\\EDWIN-OLOGA;Password=;Trusted_Connection=True;TrustServerCertificate=True;"));
+builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=Contactos;User Id=LEOPOLDO07\\lmats;Password=;Trusted_Connection=True;TrustServerCertificate=True;"));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IUser, UserRepository>();
 builder.Services.AddScoped<ICartRepository, CartRepository>();
