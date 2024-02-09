@@ -1,1 +1,1 @@
-Sistema de Vendas sale
+Sistema de gestao de Restaurante
